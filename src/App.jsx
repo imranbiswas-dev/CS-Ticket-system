@@ -3,6 +3,7 @@ import "./App.css";
 import Card from "./Components/CardSection/Card";
 import Navbar from "./Components/Header/Navbar";
 import Cart from "./Components/CardSection/Cart";
+import Footer from "./Components/Footer/Footer";
 function App() {
   const [cards, setCards] = useState([]);
   const [cart, setCart] = useState([]);
@@ -31,7 +32,9 @@ function App() {
         <section className="flex gap-10  mx-auto pt-10 justify-center lg:w-[1440px] w-11/12">
           {/* In-Progress */}
           <div className="bg-linear-to-r from-[#632EE3] to-[#9F62F2] w-177 h-62.5 flex items-center justify-center text-white font-semibold text-2xl">
-            <h2>In-Progress {cart.length}</h2>
+            <h2 className="flex flex-col items-center">
+              In-Progress <span className="mt-2 text-3xl">{cart.length}</span>
+            </h2>
           </div>
           {/* Resolved */}
           <div className="bg-linear-to-r from-[#54CF68] to-[#00827A] w-177 h-62.5 flex items-center justify-center text-white font-semibold text-2xl">
@@ -58,6 +61,10 @@ function App() {
           </div>
         </section>
       </main>
+
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
