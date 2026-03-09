@@ -1,0 +1,11 @@
+.inprogress-bg {
+  background-image: url('/src/assets/vector1.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.resolved-bg {
+  background-image: url('/src/assets//ClipLeft.png');
+  background-size: cover;
+  background-position: center;
+}

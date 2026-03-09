@@ -23,7 +23,7 @@ const Footer = () => {
             >
               <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600">
               </div>
-             <a className="btn btn-ghost text-xl">CS — Ticket System</a>
+             <h2 className="btn btn-ghost text-xl">CS — Ticket System</h2>
             </a>
           </div>
           <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">

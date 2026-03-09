@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./Components/CardSection/Card";
-import Navbar from "./Components/Header/Navbar";
 import Cart from "./Components/CardSection/Cart";
-import Footer from "./Components/Footer/Footer";
+
 function App() {
   const [cards, setCards] = useState([]);
   const [cart, setCart] = useState([]);
@@ -24,9 +23,6 @@ function App() {
 
   // mark as resolved
   const handelResolved = (ticket) => {
-    // const updateTicket = cart.filter((c) => c.ticket_id !== ticket.ticket_id);
-    // setCart(updateTicket);
-
     const newTicket = [...resolved, ticket];
     setResolved(newTicket);
   };
@@ -36,11 +32,19 @@ function App() {
         {/* Hero section */}
         <section className="flex gap-10  mx-auto pt-10 justify-center lg:w-[1440px] w-11/12">
           {/* In-Progress */}
-          <div className="bg-linear-to-r from-[#632EE3] to-[#9F62F2] w-177 h-62.5 flex items-center justify-center text-white font-semibold text-2xl">
+          <div
+            className="w-177 h-62.5 flex items-center justify-center text-white font-semibold text-2xl"
+            style={{
+              backgroundImage: `linear-gradient(to right, #632EE3, #9F62F2), url('/src/assets/vector1.png')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
             <h2 className="flex flex-col items-center">
               In-Progress <span className="mt-2 text-3xl">{cart.length}</span>
             </h2>
           </div>
+
           {/* Resolved */}
           <div className="bg-linear-to-r from-[#54CF68] to-[#00827A] w-177 h-62.5 flex items-center justify-center text-white font-semibold text-2xl">
             <h2>Resolved {resolved.length}</h2>
@@ -53,7 +57,7 @@ function App() {
           <div className="flex gap-5 justify-center mt-5">
             <div className="Tickets card  grid lg:grid-cols-2  gap-5 justify-self-center  ">
               {cards.map((card) => (
-                <Card handleAddToCart={handleAddToCart} card={card} />
+                <Card key={card.ticket_id} handleAddToCart={handleAddToCart} card={card} />
               ))}
             </div>
 
